@@ -3,10 +3,9 @@
 #include <set>
 using namespace std;
 
-// 04.09.2010
-// рассчет кодов всех различных перестановок проводов
-// f1 - первый диодный блок
-// f2 - второй диодный блок
+// Enumerating all possible wire combinations
+// f1 - first diode module
+// f2 - second diode module
 
 void f1(bool a[4]) {
 	a[1] |= a[0];
@@ -91,3 +90,4 @@ int main() {
 		printf("F2 %d %d %d %d %04X\n", perms[i][0], perms[i][1], perms[i][2], perms[i][3], res);
 	}
 }
+
