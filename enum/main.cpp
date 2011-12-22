@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <math.h>
 #include <set>
+#include <iostream>
+#include <iomanip>
 using namespace std;
 
 // Enumerating all possible wire combinations
@@ -76,18 +76,22 @@ int main() {
 	for (int i=0;i<24;i++) {
 		int res = calcall(f1, perms[i]);
 		if (s.find(res) != s.end()) {
-			printf("FAIL!!!!\n");
+			cout << "FAIL!!!!" << endl;
 		}
 		s.insert(res);
-		printf("F1 %d %d %d %d %04X\n", perms[i][0], perms[i][1], perms[i][2], perms[i][3], res);
+        cout << "F1 " << perms[i][0] << " " << perms[i][1] << " " <<
+                perms[i][2] << " " << perms[i][3] << " " <<
+                setbase(16) << setw(4) << setfill('0') << res << endl;
 	}
 	for (int i=0;i<24;i++) {
 		int res = calcall(f2, perms[i]);
 		if (s.find(res) != s.end()) {
-			printf("FAIL!!!!\n");
+            cout << "FAIL!!!!" << endl;
 		}
 		s.insert(res);
-		printf("F2 %d %d %d %d %04X\n", perms[i][0], perms[i][1], perms[i][2], perms[i][3], res);
+        cout << "F2 " << perms[i][0] << " " << perms[i][1] << " " <<
+                perms[i][2] << " " << perms[i][3] << " " <<
+                setbase(16) << setw(4) << setfill('0') << res << endl;
 	}
 }
 
